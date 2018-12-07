@@ -1,3 +1,5 @@
+https://github.com/thecryptofruit/education# 
+
 # Very quick intro to Linux
 This content is to help students enjoy using Linux, starting with the very basics. There are many Linux tutorials already written, this one is tailored to our blockchain development course. Corrections and additional requests are welcomed.
 Code blocks represent commands and their outputs are in new lines.
