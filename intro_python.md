@@ -1,14 +1,15 @@
-https://github.com/thecryptofruit/education# # Very quick intro to Python
+https://github.com/thecryptofruit/education# 
+# Very quick intro to Python
 This content is to help students enjoy using Python, a powerful and popular programming language, used in web applications, AI, data processing etc. It is a general purpose language, introduced in 1989. There are many Python tutorials already written, this one is tailored to our blockchain development course. Corrections and additional requests are welcomed.
 Code blocks represent commands and their outputs are in new lines.
 
 ## Contents
-[Python environment](#python-environment)
-[Basic operations](#basic-operations)
-[Managing source files](#managing-source-files)
-[Working with files](#working-with-files)
-[Accessing the Internet](#accessing-the-internet)
-[Interacting with Bitcoin node](#interacting-with-bitcoin-node)
+* [Python environment](#python-environment)
+* [Basic operations](#basic-operations)
+* [Managing source files](#managing-source-files)
+* [Working with files](#working-with-files)
+* [Accessing the Internet](#accessing-the-internet)
+* [Interacting with Bitcoin node](#interacting-with-bitcoin-node)
 
 
 # Python environment
