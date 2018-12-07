@@ -3,11 +3,11 @@ This content is to help students enjoy using Linux, starting with the very basic
 Code blocks represent commands and their outputs are in new lines.
 
 ## Contents
-[OS commands](#basic-os-commands)
-[Monitoring the OS](#monitoring-the-os)
-[Manipulating processes](#manipulating-processes)
-[Manipulating files and folders](#manipulating-files-and-folders)
-[Access the Internet from the command line](#access-the-internet-from-command-line)
+* [OS commands](#basic-os-commands)
+* [Monitoring the OS](#monitoring-the-os)
+* [Manipulating processes](#manipulating-processes)
+* [Manipulating files and folders](#manipulating-files-and-folders)
+* [Access the Internet from the command line](#access-the-internet-from-command-line)
 
 # Basic OS commands
 Manuals for most commands are available via `man`. Example for finding documentation about the command `pwd`:
