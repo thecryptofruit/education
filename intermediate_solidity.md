@@ -1,4 +1,11 @@
 # Intermediate Solidity
+This content is to showcase some Solidity patterns. Corrections and additional requests are welcomed.
+
+## Contents
+* [Sequence of actions](#sequence-of-actions)
+* [Organizing data](#organizing-data)
+* [Mutexes protect from re-entrancy](#mutexes-protect-from-re-entrancy)
+* [Group of admins](#group-of-admins)
 
 ## Sequence of actions 
 ### a.k.a. "Checks-Effects-Interactions Pattern"
