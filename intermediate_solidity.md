@@ -340,6 +340,7 @@ contract Attacker {
 We often want to limit certain functionalities of our contracts to administrators, which is mostly done via `ownerOnly` modifiers. Since that in essence presents a SPOF, we might want to instead allow these special functionalities to m-of-n administrators.
 
 To implement such an idea, we need a collection of special functionalities with corresponding thresholds and a way to accumulate administrators' votes.
+An alternative and cheaper way would be to make admin transactions from a multi-signature protected account, where an admin transaction would require m-of-n signatures to be prepared off-chain.
 
 Example: [pausing a contract](https://consensys.github.io/smart-contract-best-practices/software_engineering/#circuit-breakers-pause-contract-functionality) in an emergency, where 2-of-3 admins need to comply for changing the stage. Mind the simplifications for the sake of brevity.
 ```
