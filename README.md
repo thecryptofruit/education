@@ -6,7 +6,8 @@ Tutorials, introductions, basic commands etc. for students and all newcomers to 
 * [Introduction to Python](intro_python.md)
 * [Introduction to Go](intro_go.md)
 * [Introduction to Docker](intro_docker.md)
-* Introduction to Hyperledger fabric
+* [Introduction to Hyperledger fabric](intro_fabric)
+* Hyperledger fabric simple app
 
 ### Walk-through recordings
 * [Recordings of basic blockchain commands](/recordings/README.md)
