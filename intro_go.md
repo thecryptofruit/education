@@ -1,3 +1,4 @@
+
 # Introduction to Go
 Go was published in 2009 by Google engineers as an alternative to C++, but took 3 years till the first release - no connection with Bitcoin :)  There are several Go tutorials online, this one is tailored to our blockchain development course, focused on Hyperledger fabric. Corrections and additional requests are welcomed.
 
@@ -19,9 +20,18 @@ Init, Invoke, Query
 stub, shim
 
 # Environment
+## Install Go
+Install with your preferred package manager. Example for DNF:
+```
+> sudo dnf install golang
+```
+
+## Basic commands
 `go run <program_name>` runs the program
 `go build <package_name>`  compiles the package and provides binary executables
 `go install <package name>` compiles the package and installs it in `/bin` folder
+`go get -u <>` downloads and install packages, `-u` uses the network, we use this for example when importing packages from github
+
 
 # Language basics
 >>*, function string, args []string) ([]byte, error)
