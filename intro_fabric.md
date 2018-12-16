@@ -1,11 +1,10 @@
 # Introduction to Hyperledger fabric
 This is a brief tutorial to get started with Hyperledger fabric, one of the most popular private blockchain (sorry, *hashchain*) platforms. Corrections and additional requests are welcomed.
-
 The main and official tutorial is available at https://hyperledger-fabric.readthedocs.io/en/latest/chaincode4ade.html and here we provide some additional comments.
 
 ## Contents
 * [Prepare the environment](#prepare-the-environment)
-* [Additional explanations for the "Chaincode for Developers" tutorial](#additional-explanations-for-the-chaincode-for-developers-tutorial)
+* [Extras for the "Chaincode for Developers" tutorial](#extras-for-the-chaincode-for-developers-tutorial)
 * [](#)
 
 
@@ -86,22 +85,19 @@ In the end, we end up with ~100 files in these directories (~ 40 of them):
 > As we can see, there's lots of material to get us up to speed, but each example use-case could take quite sime time to study.
 
 
-# Additional explanations for the "Chaincode for Developers" tutorial
+# Extras for the "Chaincode for Developers" tutorial
 Let's continue with the Hyperledger fabric intro tutorial "Chaincode for Developers", officially described at https://hyperledger-fabric.readthedocs.io/en/latest/chaincode4ade.html and provide some more context along the way. 
 
 What will we do:
 1. Prepare a simple chaincode (a.k.a. a smart contract) written in Go in `sacc.go`, that will store a value on the blockchain and later read that value back.
 
 2. Create the network *chaincodedockerdevmode_default* with 4 services (orderer, peer, cli, chaincode). It will keep our terminal window busy with various logs, so we will only observe this window later.
-
 `docker-compose -f docker-compose-simple.yaml up`
 
 3. Start our chaincode in the second terminal.
-
 `docker exec -it chaincode bash`
 
-5. Interact with our chaincode through the third terminal.
-
+4. Interact with our chaincode through the third terminal.
 `docker exec -it cli bash`
 
 
