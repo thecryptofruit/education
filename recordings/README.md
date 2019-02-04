@@ -31,6 +31,9 @@ Links point to https://asciinema.org, but the recordings are also available here
 * Install geth standalone
 [![asciicast](https://asciinema.org/a/193318.svg)](https://asciinema.org/a/193318)
 
+* Example EVM script using `evm` utility
+[![asciicast](https://asciinema.org/a/225075.svg)](https://asciinema.org/a/225075)
+
 * Creating a couple of Ethereum accounts, interacting with geth
 [![asciicast](https://asciinema.org/a/193321.svg)](https://asciinema.org/a/193321)
 

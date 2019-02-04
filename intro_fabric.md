@@ -1,11 +1,9 @@
 # Introduction to Hyperledger fabric
-This is a brief tutorial to get started with Hyperledger fabric, one of the most popular private blockchain (sorry, *hashchain*) platforms. Corrections and additional requests are welcomed.
-The main and official tutorial is available at https://hyperledger-fabric.readthedocs.io/en/latest/chaincode4ade.html and here we provide some additional comments.
+This is a brief tutorial to get started with Hyperledger fabric, one of the most popular private blockchain (sorry, *hashchain*) platforms. Corrections and additional requests are welcomed. &NewLine;The main and official tutorial is available at https://hyperledger-fabric.readthedocs.io/en/latest/chaincode4ade.html and here we provide some additional comments.
 
 ## Contents
 * [Prepare the environment](#prepare-the-environment)
 * [Extras for the "Chaincode for Developers" tutorial](#extras-for-the-chaincode-for-developers-tutorial)
-* [](#)
 
 
 # Prepare the environment
@@ -91,13 +89,10 @@ Let's continue with the Hyperledger fabric intro tutorial "Chaincode for Develop
 What will we do:
 1. Prepare a simple chaincode (a.k.a. a smart contract) written in Go in `sacc.go`, that will store a value on the blockchain and later read that value back.
 
-2. Create the network *chaincodedockerdevmode_default* with 4 services (orderer, peer, cli, chaincode). It will keep our terminal window busy with various logs, so we will only observe this window later.
-`docker-compose -f docker-compose-simple.yaml up`
+2. Create the network *chaincodedockerdevmode_default* with 4 services (orderer, peer, cli, chaincode). It will keep our terminal window busy with various logs, so we will only observe this window later. &NewLine;`docker-compose -f docker-compose-simple.yaml up`
 
-3. Start our chaincode in the second terminal.
-`docker exec -it chaincode bash`
+3. Start our chaincode in the second terminal. &NewLine;`docker exec -it chaincode bash`
 
-4. Interact with our chaincode through the third terminal.
-`docker exec -it cli bash`
+4. Interact with our chaincode through the third terminal. &NewLine;`docker exec -it cli bash`
 
 
