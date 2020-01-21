@@ -1,6 +1,8 @@
 # Zero knowledge, from proofs to rollups
-`ZKP`: zero-knowledge proof; `ZKR`: zero-knowledge rollup
+`ZKP`: zero-knowledge proof; `ZKR`: zero-knowledge rollup  
 Desideratum ZKR: primarily, the scalability of a blockchain-based system, secondly, any privacy enhancement is welcomed.
+
+*The document is in an eternal progress ...*
 
 ## Contents
 * [ZKP](#zkp)
