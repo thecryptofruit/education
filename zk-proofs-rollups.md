@@ -1,7 +1,6 @@
 # Zero knowledge, from proofs to rollups
-Desideratum: primarily, the scalability of our blockchain-based system, secondly, any privacy enhancement is welcomed.
-
 `ZKP`: zero-knowledge proof; `ZKR`: zero-knowledge rollup
+Desideratum ZKR: primarily, the scalability of a blockchain-based system, secondly, any privacy enhancement is welcomed.
 
 ## Contents
 * [ZKP](#zkp)
@@ -50,12 +49,12 @@ Finally, QAP is fed into the ZKP algorithm, whichever used.
 
 If the prover and the verifier are to be non-interactive (NIZK), they require some prior common knowledge, a common starting point. Usually, this is CRS (Common Reference String), made by a trusted-setup pre-processing phase, where a trusted entity injects randomness. Since it is trusted, it is also called “*toxic waste*”. Instead of relying on a single entity, the process can be improved using secure MPC (multi-party computation) for generating this randomness in an honest way as long as at least one participant is honest.
 
-Prove: `(state, m) -> (state, 𝜋)`
-state = {setupP, 𝑥, ⍵}
+Prove: `(state, m) -> (state, 𝜋)`  
+state = {setupP, 𝑥, ⍵}  
 𝜋: proof
 
-Verify: `(state, 𝜋) -> (state, m)`
-state = {setupV, 𝑥}
+Verify: `(state, 𝜋) -> (state, m)`  
+state = {setupV, 𝑥}  
 m: {accept, reject}
 
 Usually, `setupP = setupV`.
@@ -213,15 +212,15 @@ August 2019: [https://vitalik.ca/general/2019/08/28/hybrid_layer_2.html](https:/
 # Companies and projects
 ## OR projects
 Fuel Labs  
-[https://github.com/FuelLabs/fuel-core](https://github.com/FuelLabs/fuel-core)
+[https://github.com/FuelLabs/fuel-core](https://github.com/FuelLabs/fuel-core)  
 Fuel based on OR, UTXO model, Yul language, fast withdrawals possible [via liquidity providers](https://ethresear.ch/t/trustless-two-way-bridges-with-side-chains-by-halting/5728)
 
 Aurora Labs  
-O2 rollup, Optimized Optimistic Rollup, using IDEX tokens, data availability challenges force data to onchain
+O2 rollup, Optimized Optimistic Rollup, using IDEX tokens, data availability challenges force data to onchain  
 [IDEX exchange](https://blog.idex.io/all-posts/o2-rollup-overview)
 
 Interstate Network  
-[https://www.dropbox.com/s/4yy78n1uhwjgq4x/interstate%20whitepaper%20v1.pdf?dl=0](https://www.dropbox.com/s/4yy78n1uhwjgq4x/interstate%20whitepaper%20v1.pdf?dl=0)
+[https://www.dropbox.com/s/4yy78n1uhwjgq4x/interstate%20whitepaper%20v1.pdf?dl=0](https://www.dropbox.com/s/4yy78n1uhwjgq4x/interstate%20whitepaper%20v1.pdf?dl=0)  
 Interstate One based on OR
 
 NutBerry  
@@ -229,22 +228,22 @@ NutBerry
 
   
 Optimism (renamed from Plasma Group on [15th January 2020](https://medium.com/ethereum-optimism/optimism-cd9bea61a3ee))  
-[https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions](https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions)
-OVM OR as L1 of L2 scaling solutions ¯\_(ツ)_/¯
+[https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions](https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions)  
+OVM OR as L1 of L2 scaling solutions ¯\_(ツ)_/¯  
 Monorepo for wizards: [https://github.com/plasma-group/pigi](https://github.com/plasma-group/pigi)
 
 SKALE Network  
-[https://github.com/skalenetwork](https://github.com/skalenetwork)
+[https://github.com/skalenetwork](https://github.com/skalenetwork)  
 BLS-rollup (not ZK, not OR)
 
 ## ZKR projects
 Loopring Project  
-[https://loopring.org](https://loopring.org)
-Loopring protocol 3, built on ZKR, has on-chain withdrawal requests, LRC token
+[https://loopring.org](https://loopring.org)  
+Loopring protocol 3, built on ZKR, has on-chain withdrawal requests, LRC token  
 [https://wedex.io/](https://wedex.io/) the first DEX on zkr
 
 Matter Labs  
-[https://matter-labs.io/](https://matter-labs.io/)
+[https://matter-labs.io/](https://matter-labs.io/)  
 ZK Sync, built on ZKR, also has high-priority withdrawal tx
   
 Offchain Labs  
@@ -254,23 +253,24 @@ Arbitrum Rollup
 [https://github.com/OffchainLabs](https://github.com/OffchainLabs)
 
 Starkware  
-StarkDEX, rollup on STARKs, March 2019 [https://youtu.be/H16nWlj3C_M](https://youtu.be/H16nWlj3C_M)
+StarkDEX, rollup on STARKs, March 2019  
+[https://youtu.be/H16nWlj3C_M](https://youtu.be/H16nWlj3C_M)
 
 ## General ZKP
 iden3  
-[Rollup](https://github.com/iden3/rollup/blob/master/doc/info.md) in js
+[Rollup](https://github.com/iden3/rollup/blob/master/doc/info.md) in js  
 [Circom](https://github.com/iden3/circom) for constructing circuits
 
 liszt (by ConsenSys)  
-[https://github.com/ConsenSys/liszt](https://github.com/ConsenSys/liszt)
+[https://github.com/ConsenSys/liszt](https://github.com/ConsenSys/liszt)  
 cross-rollup transfers
 
 Zokrates  
-[https://github.com/Zokrates/ZoKrates](https://github.com/Zokrates/ZoKrates)
+[https://github.com/Zokrates/ZoKrates](https://github.com/Zokrates/ZoKrates)  
 Higher-level lang
 
 EthSnarks  
-[https://github.com/HarryR/ethsnarks](https://github.com/HarryR/ethsnarks)
+[https://github.com/HarryR/ethsnarks](https://github.com/HarryR/ethsnarks)  
 Lowest-level, multiple DSLs
   
 Tools: [https://zkp.science/](https://zkp.science/)
