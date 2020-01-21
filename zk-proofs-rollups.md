@@ -169,9 +169,9 @@ Lots of things to think about when doing rollups. Which property is the most imp
 
 ![Blockchain rollup considerations](images/rollup_dimensions.png?raw=true "Things to consider about rollups")
 
-If all you need is simple transfers, then *universality* is no longer an issue and simple rollups are (almost) ready. *Interactiveness* can be changed, at least in the case of zk-based rollups (IZK to NIZK is possible). *Data availability* is a difficult one, though it feels that if we manage to have compressed data on-chain (maybe not as part of the state, but historical call arguments (calldata) and/or logs, or erasure codes or moving it inside a ZKP), we have a workable solution. *Privacy* - while that is what is usually gained from ZKP, in rollups the privacy is not affected. *Finality* is tightly connected to interactiveness - if a rollup uses validity proofs, it doesn’t need challenges as everything that is accepted as valid, is final on the sidechain and eventually final on the main chain; if fraud proofs are used for challenging optimistic blocks, then there must be a challenge period and finality depends on it. *Scalability* is the big improvement with rollups, numbers going as high as 10-100x, which would take us pretty far in the future. *Security* - as always, a nightmare for some, a life-time challenge for others.  
+If all you need is simple transfers, then *universality* is no longer an issue and simple rollups are (almost) ready. *Interactiveness* can be changed, at least in the case of zk-based rollups (IZK to NIZK is possible). *Data availability* is a difficult one, though it feels that if we manage to have compressed data on-chain (maybe not as part of the state, but historical call arguments (calldata) and/or logs, or erasure codes or [moving it inside a ZKP](https://www.reddit.com/r/ethereum/comments/9d65e7/scaling_ethereum_with_snarks/e5fmc1r)), we have a workable solution. *Privacy* - while that is what is usually gained from ZKP, in rollups the privacy is not affected. *Finality* is tightly connected to interactiveness - if a rollup uses validity proofs, it doesn’t need challenges as everything that is accepted as valid, is final on the sidechain and eventually final on the main chain; if fraud proofs are used for challenging optimistic blocks, then there must be a challenge period and finality depends on it. *Scalability* is the big improvement with rollups, numbers going as high as 10-100x, which would take us pretty far in the future. *Security* - as always, a nightmare for some, a life-time challenge for others.  
 
-There’s a handful of projects doing rollups for scalability purposes. Some as old as 15 months even. The pace of research in this field is indicating that there indeed exists a ray of hope for scalability. Not just for Ethereum and not just for Ethereum 1.x. Even Bitcoin might someday incorporate similar principles! Say, in 5-10 years?
+There’s a handful of projects doing rollups for scalability purposes. Some as old as 15 months even. The pace of research in this field is indicating that there indeed exists a ray of hope for scalability. Not just for Ethereum and not just for Ethereum 1.x. [Even Bitcoin](https://www.reddit.com/r/btc/comments/e8u89w/this_is_what_happens_when_the_devs_are_paid_for/faeph4f) might someday incorporate similar principles! Say, in a couple of years?
 
 ![Blockchain rollup implementations](images/rollups.png?raw=true "Rollup projects")
 
@@ -179,10 +179,10 @@ Which one to choose? It seems to me that this question is at least a little bit 
 
 Most of the discussion these days is around zk-rollups, which we’ve described as being presented in 2018, vs. optimistic rollups, which came around June 2019, mostly from John Adler, then working at Consensys, now at Fuel Labs ([https://ethresear.ch/t/minimal-viable-merged-consensus/5617](https://ethresear.ch/t/minimal-viable-merged-consensus/5617) ). They are similar, but mainly differ in that the OR is easier to implement for general use, but since it doesn’t use indisputable ZKP for validity of the new state, it is optimistic that the new state is correct and thus needs an added verification game which enables dispute resolution about new states, meaning it takes a bit more time and storage for it to work.
 
-Great comparison on Coinmonks: [ZK Rollup & Optimistic Rollup](https://medium.com/coinmonks/zk-rollup-optimistic-rollup-70c01295231b)
+Great comparison on Coinmonks: [ZK Rollup & Optimistic Rollup](https://medium.com/coinmonks/zk-rollup-optimistic-rollup-70c01295231b)  
 
 
-**Some references to projects:**
+#### Some references to projects:  
 Zk-rollup, the father of it all: [https://github.com/barryWhiteHat/roll_up](https://github.com/barryWhiteHat/roll_up)
 
 ZK-rollup calculations from Iden3: [https://iden3.io/post/istanbul-zkrollup-ethereum-throughput-limits-analysis](https://iden3.io/post/istanbul-zkrollup-ethereum-throughput-limits-analysis)
@@ -205,74 +205,71 @@ Arbitrum description and discussion: [https://ethresear.ch/t/introducing-arbitru
 
   
 
-**The three articles from Vitalik Buterin on this matter:**
-
+#### The three articles from Vitalik Buterin on this matter:  
 September 2014: [https://blog.ethereum.org/2014/09/17/scalability-part-1-building-top/](https://blog.ethereum.org/2014/09/17/scalability-part-1-building-top/)
-
 September 2018: [https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
-
 August 2019: [https://vitalik.ca/general/2019/08/28/hybrid_layer_2.html](https://vitalik.ca/general/2019/08/28/hybrid_layer_2.html)
 
 # Companies and projects
 ## OR projects
-Fuel Labs
+Fuel Labs  
 [https://github.com/FuelLabs/fuel-core](https://github.com/FuelLabs/fuel-core)
-Fuel based on OR, UTXO model, Yul language, fast withdrawals possible via liquidity providers
+Fuel based on OR, UTXO model, Yul language, fast withdrawals possible [via liquidity providers](https://ethresear.ch/t/trustless-two-way-bridges-with-side-chains-by-halting/5728)
 
-Aurora Labs
+Aurora Labs  
 O2 rollup, Optimized Optimistic Rollup, using IDEX tokens, data availability challenges force data to onchain
 [IDEX exchange](https://blog.idex.io/all-posts/o2-rollup-overview)
 
-Interstate Network
+Interstate Network  
 [https://www.dropbox.com/s/4yy78n1uhwjgq4x/interstate%20whitepaper%20v1.pdf?dl=0](https://www.dropbox.com/s/4yy78n1uhwjgq4x/interstate%20whitepaper%20v1.pdf?dl=0)
 Interstate One based on OR
 
-NutBerry
+NutBerry  
 [https://github.com/NutBerry/stack](https://github.com/NutBerry/stack)
 
   
-Optimism (renamed from Plasma Group on 15th January 2020)
+Optimism (renamed from Plasma Group on [15th January 2020](https://medium.com/ethereum-optimism/optimism-cd9bea61a3ee))  
 [https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions](https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions)
 OVM OR as L1 of L2 scaling solutions ¯\_(ツ)_/¯
 Monorepo for wizards: [https://github.com/plasma-group/pigi](https://github.com/plasma-group/pigi)
 
-SKALE Network
+SKALE Network  
 [https://github.com/skalenetwork](https://github.com/skalenetwork)
 BLS-rollup (not ZK, not OR)
 
 ## ZKR projects
-Loopring Project
+Loopring Project  
 [https://loopring.org](https://loopring.org)
 Loopring protocol 3, built on ZKR, has on-chain withdrawal requests, LRC token
 [https://wedex.io/](https://wedex.io/) the first DEX on zkr
 
-Matter Labs
+Matter Labs  
 [https://matter-labs.io/](https://matter-labs.io/)
 ZK Sync, built on ZKR, also has high-priority withdrawal tx
   
-Offchain Labs
+Offchain Labs  
 [https://offchainlabs.com/](https://offchainlabs.com/)
 
-Arbitrum Rollup
+Arbitrum Rollup  
 [https://github.com/OffchainLabs](https://github.com/OffchainLabs)
 
-Starkware
+Starkware  
 StarkDEX, rollup on STARKs, March 2019 [https://youtu.be/H16nWlj3C_M](https://youtu.be/H16nWlj3C_M)
 
 ## General ZKP
-iden3
+iden3  
 [Rollup](https://github.com/iden3/rollup/blob/master/doc/info.md) in js
 [Circom](https://github.com/iden3/circom) for constructing circuits
 
-liszt (by ConsenSys)
+liszt (by ConsenSys)  
 [https://github.com/ConsenSys/liszt](https://github.com/ConsenSys/liszt)
 cross-rollup transfers
 
-Zokrates
+Zokrates  
 [https://github.com/Zokrates/ZoKrates](https://github.com/Zokrates/ZoKrates)
 Higher-level lang
 
-EthSnarks
+EthSnarks  
 [https://github.com/HarryR/ethsnarks](https://github.com/HarryR/ethsnarks)
 Lowest-level, multiple DSLs
   

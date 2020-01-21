@@ -16,4 +16,4 @@ Tutorials, introductions, basic commands etc. for students and all newcomers to 
 * [Intermediate material for Solidity](intermediate_solidity.md)
 
 ### Advanced level
-* [Zero knowledge, from proofs to rollups](zk-proofs-rollups)
+* [Zero knowledge, from proofs to rollups](zk-proofs-rollups.md)
