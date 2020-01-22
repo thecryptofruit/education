@@ -207,8 +207,8 @@ Arbitrum description and discussion: [https://ethresear.ch/t/introducing-arbitru
   
 
 #### The three articles from Vitalik Buterin on this matter:  
-September 2014: [https://blog.ethereum.org/2014/09/17/scalability-part-1-building-top/](https://blog.ethereum.org/2014/09/17/scalability-part-1-building-top/)
-September 2018: [https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
+September 2014: [https://blog.ethereum.org/2014/09/17/scalability-part-1-building-top/](https://blog.ethereum.org/2014/09/17/scalability-part-1-building-top/)  
+September 2018: [https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)  
 August 2019: [https://vitalik.ca/general/2019/08/28/hybrid_layer_2.html](https://vitalik.ca/general/2019/08/28/hybrid_layer_2.html)
 
 # Companies and projects
