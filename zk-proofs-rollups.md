@@ -87,7 +87,7 @@ There are three major variants:
 2.  BULLETPROOFS
 3.  zk-STARK
 
-It is about arguments (computationally unbounded provers), not proofs (bounded provers)!
+It is about arguments (computationally bounded provers), not proofs (unbounded provers)!
 
 ### zk-SNARK
 **zk succinct non-interactive argument of knowledge**
