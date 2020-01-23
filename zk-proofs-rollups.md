@@ -140,7 +140,7 @@ In 2019, BIU Winter School on Cryptography was dedicated to ZK: [https://cyber.b
 # ZKR
 *Zero-knowledge verification of honest execution of delegated computation* - a powerful solution for outsourcing hard computation work and be sure that received results are correct.
 
-**rollup** = batching of transactions and verifying just the proof instead of all TXs by all nodes. Verifying the proof is much faster than the computation of the original payload of processing all the {inputs, code, outputs}.
+**rollup** = batching of transactions and verifying just the proof instead of all TXs by all nodes. Verifying the proof is much faster than the computation of the original payload of processing all the {inputs, code, outputs}. In ZKR, the challenge is usually that the generation of the proof takes lots of resources (SNARKs) or the proof size is too big to be put on-chain (STARKs).
   
 Rollups can solve data availability problems (e.g. publishing compressed data on-chain), but there are also rollup constructions that don’t (e.g. RollupNC, [https://github.com/rollupnc/RollupNC](https://github.com/rollupnc/RollupNC) ).
 
