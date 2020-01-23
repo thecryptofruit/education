@@ -166,7 +166,9 @@ Rollups - because a batch of off-chain transactions is “rolled-up” into a si
 
 ![Blockchain rollup concept](images/rollup_concept.png?raw=true "The concept of rollups")
 
-State roots are the tips of cryptographic accumulators (usually Merkle trees, though there're other/better ones, e.g. RSA accumulators). See the paper from December 2019: [Scaling Verifiable Computation Using Efficient Set Accumulators](https://eprint.iacr.org/2019/1494.pdf) by Alex Ozdemir, Riad S. Wahby, Dan Boneh.
+State roots are the tips of cryptographic accumulators (usually Merkle trees, though there're other/better ones, e.g. RSA accumulators). See the paper from December 2019: [Scaling Verifiable Computation Using Efficient Set Accumulators](https://eprint.iacr.org/2019/1494.pdf) by Alex Ozdemir, Riad S. Wahby, Dan Boneh.  
+
+The entity posting rollups on-chain is called the **operator** or sometimes the **aggregator**. As centralized as this sounds, this entity is non-custodial and not trusted. Even in the case of non-operational operator, it would be picked up by others who could either step in, or there's a pool of operators ([see multi-operator model by Matter Labs](https://medium.com/matter-labs/introducing-matter-testnet-502fab5a6f17)), or the sidechain switches to a limp-mode ("exit" - withdrawals only).  
 
 Lots of things to think about when doing rollups. Which property is the most important to a particular use case, where to start, who to ask? There are practically no live projects in production, but 2020 is the year! Many of the properties in the diagram are correlated.
 
