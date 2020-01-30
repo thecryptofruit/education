@@ -140,7 +140,7 @@ In 2019, BIU Winter School on Cryptography was dedicated to ZK: [https://cyber.b
 # ZKR
 *Zero-knowledge verification of honest execution of delegated computation* - a powerful solution for outsourcing hard computation work and be sure that received results are correct.
 
-**rollup** = batching of transactions and verifying just the proof instead of all TXs by all nodes. Verifying the proof is much faster than the computation of the original payload of processing all the {inputs, code, outputs}. In ZKR, the challenge is usually that the generation of the proof takes lots of resources (SNARKs) or the proof size is too big to be put on-chain (STARKs).
+**rollup** = batching of transactions and verifying just the proof instead of all TXs by all nodes. Verifying the proof is much faster than the computation of the original payload of processing all the {inputs, code, outputs}. In ZKR, the challenge is usually that the generation of the proof takes lots of resources (esp. with SNARKs, could be mitigated by first publishing the compressed data and the proof only later) or the proof size is too big to be put on-chain (STARKs).
   
 Rollups can solve data availability problems (e.g. publishing compressed data on-chain), but there are also rollup constructions that don’t (e.g. RollupNC, [https://github.com/rollupnc/RollupNC](https://github.com/rollupnc/RollupNC) ).
 
@@ -162,13 +162,15 @@ However, at the time of Vitalik’s post, there was already a group working on a
 Zero-knowledge in rollups has nothing to do with privacy. There are lots of new rollups coming to life since 2019, mostly classified as “*optimistic rollups*”, though there also exists a product with that exact same name. Some came from sidechain designs, some from Plasma designs, e.g. Ignis, but renamed and renamed again. Just ‘coz.
 
 # Rollups
-Rollups - because a batch of off-chain transactions is “rolled-up” into a single, one on-chain transaction. Sometimes with all the data, even if compressed (a.k.a. a *proof of validity*), sometimes only when challenged (a.k.a. a *fraud proof*). Rollups work on an idea of a *commit-chain*, where an operator/aggregator publishes sidechain checkpoints on the main chain. See the paper from 2018: [Commit-Chains: Secure, Scalable Off-ChainPayments](https://eprint.iacr.org/2018/642.pdf) by Rami Khalil, Alexei Zamyatin, Guillaume Felley, Pedro Moreno-Sanchez, Arthur Gervais - both approaches are mentiond: by way of challenge-response checkpoints (a.k.a. NOCUST) and the ZKP-guaranteed state transitions (a.k.a. NOCUST-ZKP).
+Rollups - because a batch of off-chain transactions is “rolled-up” into a single, one on-chain transaction. Sometimes with all the data, even if compressed (a.k.a. a *proof of validity*), sometimes only when challenged (a.k.a. a *fraud proof*). 
+
+Rollups work on an idea of a *commit-chain*, where the operator/aggregator publishes sidechain checkpoints on the main chain. See the paper from 2018: [Commit-Chains: Secure, Scalable Off-ChainPayments](https://eprint.iacr.org/2018/642.pdf) by Rami Khalil, Alexei Zamyatin, Guillaume Felley, Pedro Moreno-Sanchez, Arthur Gervais - both approaches are mentiond: using challenge-response checkpoints (a.k.a. NOCUST) and the ZKP-guaranteed state transitions (a.k.a. NOCUST-ZKP).
 
 ![Blockchain rollup concept](images/rollup_concept.png?raw=true "The concept of rollups")
 
-State roots are the tips of cryptographic accumulators (usually Merkle trees, though there're other/better ones, e.g. RSA accumulators). See the paper from December 2019: [Scaling Verifiable Computation Using Efficient Set Accumulators](https://eprint.iacr.org/2019/1494.pdf) by Alex Ozdemir, Riad S. Wahby, Dan Boneh.  
+State roots are the tips of cryptographic accumulators (usually Merkle trees, though there are other/better ones, e.g. RSA accumulators). See the paper from December 2019: [Scaling Verifiable Computation Using Efficient Set Accumulators](https://eprint.iacr.org/2019/1494.pdf) by Alex Ozdemir, Riad S. Wahby, Dan Boneh.  
 
-The entity posting rollups on-chain is called the **operator** or sometimes the **aggregator**. As centralized as this sounds, this entity is non-custodial and not trusted. Even in the case of non-operational operator, it would be picked up by others who could either step in, or there's a pool of operators ([see multi-operator model by Matter Labs](https://medium.com/matter-labs/introducing-matter-testnet-502fab5a6f17)), or the sidechain switches to a limp-mode ("exit" - withdrawals only).  
+The entity posting rollups on-chain is called an **operator** or sometimes an **aggregator**. As centralized as this sounds, this entity is non-custodial and not trusted. Even in the case of non-operational operator, it would be picked up by others who could either step in, or there's a pool of operators ([see multi-operator model by Matter Labs](https://medium.com/matter-labs/introducing-matter-testnet-502fab5a6f17)), or the sidechain switches to a limp-mode ("exit" - withdrawals only).  
 
 Lots of things to think about when doing rollups. Which property is the most important to a particular use case, where to start, who to ask? There are practically no live projects in production, but 2020 is the year! Many of the properties in the diagram are correlated.
 
@@ -201,14 +203,17 @@ Optimistic rollup story by John Adler: [https://medium.com/@adlerjohn/the-why-s-
 
 Optimistic rollup from Plasma: [https://medium.com/plasma-group/ethereum-smart-contracts-in-l2-optimistic-rollup-2c1cef2ec537](https://medium.com/plasma-group/ethereum-smart-contracts-in-l2-optimistic-rollup-2c1cef2ec537)
 
-Attack on OR: [https://ethresear.ch/t/nearly-zero-cost-attack-scenario-on-optimistic-rollup/6336](https://ethresear.ch/t/nearly-zero-cost-attack-scenario-on-optimistic-rollup/6336)
-
 StarkDEX proofs: [https://medium.com/starkware/starkdex-deep-dive-the-stark-core-engine-497942d0f0ab](https://medium.com/starkware/starkdex-deep-dive-the-stark-core-engine-497942d0f0ab)
 
 StarkWare comparing validity and fraud proofs: [https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a)
 
 Arbitrum description and discussion: [https://ethresear.ch/t/introducing-arbitrum-a-new-layer-2-solution/3825](https://ethresear.ch/t/introducing-arbitrum-a-new-layer-2-solution/3825)  
 
+
+#### Attacks:
+Attack on OR, by Alex Gluchowski: [https://ethresear.ch/t/nearly-zero-cost-attack-scenario-on-optimistic-rollup/6336](https://ethresear.ch/t/nearly-zero-cost-attack-scenario-on-optimistic-rollup/6336)
+
+Censorship attacks in rollups, by Ed Felten: [https://medium.com/offchainlabs/fighting-censorship-attacks-on-smart-contracts-c026a7c0ff02](https://medium.com/offchainlabs/fighting-censorship-attacks-on-smart-contracts-c026a7c0ff02)
   
 
 #### The three articles from Vitalik Buterin on this matter:  
