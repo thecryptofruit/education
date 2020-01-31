@@ -168,7 +168,9 @@ Rollups work on an idea of a *commit-chain*, where the operator/aggregator publi
 
 ![Blockchain rollup concept](images/rollup_concept.png?raw=true "The concept of rollups")
 
-State roots are the tips of cryptographic accumulators (usually Merkle trees, though there are other/better ones, e.g. RSA accumulators). See the paper from December 2019: [Scaling Verifiable Computation Using Efficient Set Accumulators](https://eprint.iacr.org/2019/1494.pdf) by Alex Ozdemir, Riad S. Wahby, Dan Boneh.  
+State roots are the tips of cryptographic accumulators (usually Merkle trees, though there are other/better ones, e.g. RSA accumulators). Accumulators are used to prove membership in a set, that compared to Merkle proofs don't grow logarithmically, but can be constant in size.  
+Longer description of accumulators by Georgios Konstantopoulos, January 2019: [https://blog.goodaudience.com/deep-dive-on-rsa-accumulators-230bc84144d9](https://blog.goodaudience.com/deep-dive-on-rsa-accumulators-230bc84144d9).  
+See the paper about RSA inside SNARKs from December 2019: [Scaling Verifiable Computation Using Efficient Set Accumulators](https://eprint.iacr.org/2019/1494.pdf) by Alex Ozdemir, Riad S. Wahby, Dan Boneh.  
 
 The entity posting rollups on-chain is called an **operator** or sometimes an **aggregator**. As centralized as this sounds, this entity is non-custodial and not trusted. Even in the case of non-operational operator, it would be picked up by others who could either step in, or there's a pool of operators ([see multi-operator model by Matter Labs](https://medium.com/matter-labs/introducing-matter-testnet-502fab5a6f17)), or the sidechain switches to a limp-mode ("exit" - withdrawals only).  
 
@@ -260,17 +262,17 @@ ZK Sync, built on ZKR, also has high-priority withdrawal tx
   
 Offchain Labs  
 [https://offchainlabs.com/](https://offchainlabs.com/)
-
 Arbitrum Rollup  
 [https://github.com/OffchainLabs](https://github.com/OffchainLabs)
 
 Starkware  
+[https://starkware.co/](https://starkware.co/)  
 StarkDEX, rollup on STARKs, March 2019  
 [https://youtu.be/H16nWlj3C_M](https://youtu.be/H16nWlj3C_M)
 
 ## General ZKP
 iden3  
-[Rollup](https://github.com/iden3/rollup/blob/master/doc/info.md) in js  
+[zk-rollup](https://github.com/iden3/rollup/blob/master/doc/info.md) in js  
 [Circom](https://github.com/iden3/circom) for constructing circuits
 
 liszt (by ConsenSys)  
@@ -285,4 +287,4 @@ EthSnarks
 [https://github.com/HarryR/ethsnarks](https://github.com/HarryR/ethsnarks)  
 Lowest-level, multiple DSLs
   
-Tools: [https://zkp.science/](https://zkp.science/)
+Tools collections: [https://zkp.science/](https://zkp.science/)
