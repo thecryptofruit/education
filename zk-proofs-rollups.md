@@ -137,8 +137,11 @@ Comprehensive and up-to-date documentation for zero-knowledge proofs can be foun
 
 In 2019, BIU Winter School on Cryptography was dedicated to ZK: [https://cyber.biu.ac.il/event/the-9th-biu-winter-school-on-cryptography/](https://cyber.biu.ac.il/event/the-9th-biu-winter-school-on-cryptography/)
 
+A list of ZKP resources is maintained by Matter Labs at: [https://github.com/matter-labs/awesome-zero-knowledge-proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs)
+
+
 # ZKR
-*Zero-knowledge verification of honest execution of delegated computation* - a powerful solution for outsourcing hard computation work and be sure that received results are correct.
+What is zero-knowledge rollup?  *Zero-knowledge verification of honest execution of delegated computation* - a powerful solution for outsourcing hard computation work and be sure that received results are correct.
 
 **rollup** = batching of transactions and verifying just the proof instead of all TXs by all nodes. Verifying the proof is much faster than the computation of the original payload of processing all the {inputs, code, outputs}. In ZKR, the challenge is usually that the generation of the proof takes lots of resources (esp. with SNARKs, could be mitigated by first publishing the compressed data and the proof only later) or the proof size is too big to be put on-chain (STARKs).
   
@@ -162,7 +165,7 @@ However, at the time of Vitalik’s post, there was already a group working on a
 Zero-knowledge in rollups has nothing to do with privacy. There are lots of new rollups coming to life since 2019, mostly classified as “*optimistic rollups*”, though there also exists a product with that exact same name. Some came from sidechain designs, some from Plasma designs, e.g. Ignis, but renamed and renamed again. Just ‘coz.
 
 # Rollups
-Rollups - because a batch of off-chain transactions is “rolled-up” into a single, one on-chain transaction. Sometimes with all the data, even if compressed (a.k.a. a *proof of validity*), sometimes only when challenged (a.k.a. a *fraud proof*). 
+Rollup techniques need not involve zero knowledge. The name *rollups* implies that a batch of off-chain transactions is “rolled-up” into a single, one on-chain transaction. They come with all the data, which is compressed and can be either guaranteed to be true (a.k.a. a *proof of validity*), or can be only "certain" about it when we survive the challenge period (a.k.a. a *fraud proof*), depending on the techniques used. 
 
 Rollups work on an idea of a *commit-chain*, where the operator/aggregator publishes sidechain checkpoints on the main chain. See the paper from 2018: [Commit-Chains: Secure, Scalable Off-ChainPayments](https://eprint.iacr.org/2018/642.pdf) by Rami Khalil, Alexei Zamyatin, Guillaume Felley, Pedro Moreno-Sanchez, Arthur Gervais - both approaches are mentiond: using challenge-response checkpoints (a.k.a. NOCUST) and the ZKP-guaranteed state transitions (a.k.a. NOCUST-ZKP).
 
@@ -261,7 +264,7 @@ Matter Labs
 ZK Sync, built on ZKR, also has high-priority withdrawal tx
   
 Offchain Labs  
-[https://offchainlabs.com/](https://offchainlabs.com/)
+[https://offchainlabs.com/](https://offchainlabs.com/)  
 Arbitrum Rollup  
 [https://github.com/OffchainLabs](https://github.com/OffchainLabs)
 
