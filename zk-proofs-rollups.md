@@ -259,6 +259,9 @@ Loopring Project
 Loopring protocol 3, built on ZKR, has on-chain withdrawal requests, LRC token  
 [https://wedex.io/](https://wedex.io/) the first DEX on zkr
 
+Iden3  
+[zk-rollup](https://docs.iden3.io/#/rollup/rollup) using iden3's circom libs
+
 Matter Labs  
 [https://matter-labs.io/](https://matter-labs.io/)  
 ZK Sync, built on ZKR, also has high-priority withdrawal tx
@@ -275,7 +278,6 @@ StarkDEX, rollup on STARKs, March 2019
 
 ## General ZKP
 iden3  
-[zk-rollup](https://github.com/iden3/rollup/blob/master/doc/info.md) in js  
 [Circom](https://github.com/iden3/circom) for constructing circuits
 
 liszt (by ConsenSys)  
