@@ -141,11 +141,11 @@ A list of ZKP resources is maintained by Matter Labs at: [https://github.com/mat
 
 
 # ZKR
-What is zero-knowledge rollup?  *Zero-knowledge verification of honest execution of delegated computation* - a powerful solution for outsourcing hard computation work and be sure that received results are correct.
+What is zero-knowledge rollup?  *Zero-knowledge verification of honest execution of delegated computation* is a powerful solution for outsourcing hard computation work and be sure that received results are correct.
 
 **rollup** = batching of transactions and verifying just the proof instead of all TXs by all nodes. Verifying the proof is much faster than the computation of the original payload of processing all the {inputs, code, outputs}. In ZKR, the challenge is usually that the generation of the proof takes lots of resources (esp. with SNARKs, could be mitigated by first publishing the compressed data and the proof only later) or the proof size is too big to be put on-chain (STARKs).
   
-Rollups can solve data availability problems (e.g. publishing compressed data on-chain), but there are also rollup constructions that don’t (e.g. RollupNC, [https://github.com/rollupnc/RollupNC](https://github.com/rollupnc/RollupNC) ).
+Rollups can solve data availability problems (e.g. publishing compressed data on-chain), but there are also rollup constructions that don’t (e.g. [RollupNC](https://github.com/rollupnc/RollupNC) ).
 
 ## History
 A breakthrough paper in 2013 described efficiency improvements over state-of-the-art proofs of programs execution, but also a practical implementation: ”SNARKs for C: Verifying Program Executions Succinctly and in Zero Knowledge” [16 August, 2013; [https://eprint.iacr.org/2013/507](https://eprint.iacr.org/2013/507); Eli Ben-Sasson, Alessandro Chiesa, Daniel Genkin, Eran Tromer, Madars Virza]. The paper described a (non-blockchain, duh) system with zk-proofs for executions of arbitrary programs in C language. A [21-minutes video talk is also available](https://www.youtube.com/watch?v=nS3smRAfUd8).
@@ -175,7 +175,7 @@ State roots are the tips of cryptographic accumulators (usually Merkle trees, th
 Longer description of accumulators by Georgios Konstantopoulos, January 2019: [https://blog.goodaudience.com/deep-dive-on-rsa-accumulators-230bc84144d9](https://blog.goodaudience.com/deep-dive-on-rsa-accumulators-230bc84144d9).  
 See the paper about RSA inside SNARKs from December 2019: [Scaling Verifiable Computation Using Efficient Set Accumulators](https://eprint.iacr.org/2019/1494.pdf) by Alex Ozdemir, Riad S. Wahby, Dan Boneh.  
 
-The entity posting rollups on-chain is called an **operator** or sometimes an **aggregator**. As centralized as this sounds, this entity is non-custodial and not trusted. Even in the case of non-operational operator, it would be picked up by others who could either step in, or there's a pool of operators ([see multi-operator model by Matter Labs](https://medium.com/matter-labs/introducing-matter-testnet-502fab5a6f17)), or the sidechain switches to a limp-mode ("exit" - withdrawals only).  
+The entity posting rollups on-chain is called an **operator** or sometimes an **aggregator**. As centralized as this sounds, this entity is non-custodial and not trusted. Even in the case of non-operational operator, it would be picked up by others who could either step in, or there's a pool of operators ([see the multi-operator model by Matter Labs](https://medium.com/matter-labs/introducing-matter-testnet-502fab5a6f17)), or the sidechain switches to a limp-mode ("exit" - withdrawals only).  
 
 Lots of things to think about when doing rollups. Which property is the most important to a particular use case, where to start, who to ask? There are practically no live projects in production, but 2020 is the year! Many of the properties in the diagram are correlated.
 
@@ -190,7 +190,7 @@ See also commit-chain presentation on Bitcoin in 2019: [Non Custodial Sidechains
 
 Which one to choose? It seems to me that this question is at least a little bit easier than which Plasma design to pick was. There are prominent experts working on it, there’s tens of millions of dollars deployed, the expectations are extremely high, but so are the initial measurements of rollup improvements.
 
-Most of the discussion these days is around zk-rollups, which we’ve described as being presented in 2018, vs. optimistic rollups, which came around June 2019, mostly from John Adler, then working at Consensys, now at Fuel Labs ([https://ethresear.ch/t/minimal-viable-merged-consensus/5617](https://ethresear.ch/t/minimal-viable-merged-consensus/5617) ). They are similar, but mainly differ in that the OR is easier to implement for general use, but since it doesn’t use indisputable ZKP for validity of the new state, it is optimistic that the new state is correct and thus needs an added verification game which enables dispute resolution about new states, meaning it takes a bit more time and storage for it to work.
+Most of the discussion these days is around zk-rollups, which we’ve described as being presented in 2018, vs. optimistic rollups, which came around June 2019, mostly from John Adler, then working at Consensys, now at Fuel Labs ([https://ethresear.ch/t/minimal-viable-merged-consensus/5617](https://ethresear.ch/t/minimal-viable-merged-consensus/5617) ). They are similar, but mainly differ in that the OR is easier to implement for general use, but since it doesn’t use undisputable ZKP for guaranteeing the validity of the new state, it is optimistic that the new state is correct and thus needs an added verification game which enables dispute resolution about new states, meaning it takes a bit more time and storage for it to work.
 
 Great comparison on Coinmonks: [ZK Rollup & Optimistic Rollup](https://medium.com/coinmonks/zk-rollup-optimistic-rollup-70c01295231b)  
 
@@ -213,6 +213,8 @@ StarkDEX proofs: [https://medium.com/starkware/starkdex-deep-dive-the-stark-core
 StarkWare comparing validity and fraud proofs: [https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a)
 
 Arbitrum description and discussion: [https://ethresear.ch/t/introducing-arbitrum-a-new-layer-2-solution/3825](https://ethresear.ch/t/introducing-arbitrum-a-new-layer-2-solution/3825)  
+
+Plasma vs. rollups, an excellent article by Ashwin Ramachandran & Haseeb Qureshi: [The Life and Death of Plasma](https://medium.com/dragonfly-research/the-life-and-death-of-plasma-b72c6a59c5ad)
 
 
 #### Attacks:
@@ -247,7 +249,10 @@ NutBerry
 Optimism (renamed from Plasma Group on [15th January 2020](https://medium.com/ethereum-optimism/optimism-cd9bea61a3ee))  
 [https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions](https://github.com/plasma-group/ovm/tree/master/specs#ovm-layer-2-constructions)  
 OVM OR as L1 of L2 scaling solutions ¯\_(ツ)_/¯  
-Monorepo for wizards: [https://github.com/plasma-group/pigi](https://github.com/plasma-group/pigi)
+Monorepo for wizards: [https://github.com/plasma-group/pigi](https://github.com/plasma-group/pigi)  
+
+LeapDAO (stopped their Plasma Leap mainnet in March 2020)  
+_Don't really know which way they go now?_  
 
 SKALE Network  
 [https://github.com/skalenetwork](https://github.com/skalenetwork)  
@@ -257,10 +262,11 @@ BLS-rollup (not ZK, not OR)
 Loopring Project  
 [https://loopring.org](https://loopring.org)  
 Loopring protocol 3, built on ZKR, has on-chain withdrawal requests, LRC token  
-[https://wedex.io/](https://wedex.io/) the first DEX on zkr
+[https://wedex.io/](https://wedex.io/) the first DEX on ZKR
 
 Iden3  
-[zk-rollup](https://docs.iden3.io/#/rollup/rollup) using iden3's circom libs
+[zk-rollup](https://docs.iden3.io/#/rollup/rollup) using iden3's circom libs  
+As an identity provider, why rollups? [Read here, it's due to making lots of claims, gaslessly.](https://blog.iden3.io/zkrollup-to-universal-identities.html).
 
 Matter Labs  
 [https://matter-labs.io/](https://matter-labs.io/)  
@@ -292,4 +298,8 @@ EthSnarks
 [https://github.com/HarryR/ethsnarks](https://github.com/HarryR/ethsnarks)  
 Lowest-level, multiple DSLs
   
+ZEXE
+[https://github.com/scipr-lab/zexe](https://github.com/scipr-lab/zexe)
+"decentralized private computation (DPC) scheme"; a POC library implementing off-chain ledger-based txs with public zkSNARK proofs
+
 Tools collections: [https://zkp.science/](https://zkp.science/)
