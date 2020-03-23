@@ -251,7 +251,7 @@ Optimism (renamed from Plasma Group on [15th January 2020](https://medium.com/et
 OVM OR as L1 of L2 scaling solutions ¯\_(ツ)_/¯  
 Monorepo for wizards: [https://github.com/plasma-group/pigi](https://github.com/plasma-group/pigi)  
 
-LeapDAO (stopped their Plasma Leap mainnet in March 2020)  
+LeapDAO (stopped their Plasma Leap mainnet in [March 2020](https://leapdao.org/blog/mainnet-shutdown/))  
 _Don't really know which way they go now?_  
 
 SKALE Network  
@@ -299,7 +299,7 @@ EthSnarks
 Lowest-level, multiple DSLs
   
 ZEXE
-[https://github.com/scipr-lab/zexe](https://github.com/scipr-lab/zexe)
+[https://github.com/scipr-lab/zexe](https://github.com/scipr-lab/zexe)  
 "decentralized private computation (DPC) scheme"; a POC library implementing off-chain ledger-based txs with public zkSNARK proofs
 
 Tools collections: [https://zkp.science/](https://zkp.science/)
